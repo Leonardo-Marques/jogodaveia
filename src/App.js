@@ -36,7 +36,6 @@ function App() {
 //<div className="status">{status}</div>
   return (
     <div>
-      <div className="status">{status}</div>
       <div className="board-row">
         {renderSquare(0)}
         {renderSquare(1)}
