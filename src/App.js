@@ -54,6 +54,9 @@ function App() {
       <div className="knn">
         {IA}
         </div>
+        <footer>
+          Nomes: Dylan Silveira, Leandro Silva, Leonardo Marques, Nicolas Marques
+      </footer>
     </div>
   );
   function sleep(ms) {

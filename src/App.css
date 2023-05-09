@@ -57,3 +57,13 @@ body {
 .square.O {
   color: #00f;
 }
+
+footer {
+  position: fixed;
+  top: 0;
+  margin-top: 50px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-weight: bold;
+  
+}
