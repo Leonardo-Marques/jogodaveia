@@ -229,7 +229,7 @@ var nn = new RedeNeural(9, 10, 3);
 
 function train() {
 
-    for (let i = 1; i <= 2500; i++) {
+    for (let i = 1; i <= 250; i++) {
         dataset.forEach(x => nn.train(x.input, x.output));
         console.log('Época', i)
     }
