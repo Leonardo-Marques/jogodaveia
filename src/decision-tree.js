@@ -217,4 +217,3 @@ const _ = require('lodash');
   function randomUUID() {
     return "_r" + Math.random().toString(32).slice(2);
   }
-  return DecisionTreeID3;
