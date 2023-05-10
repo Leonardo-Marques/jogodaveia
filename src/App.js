@@ -1,5 +1,5 @@
 import { mlp } from './mlp'
-import { arv } from './arv'
+//import { arv } from './arv'
 import { knn } from './knn'
 import React, { useState } from 'react';
 import './App.css';
@@ -9,7 +9,7 @@ function App() {
   const [xIsNext, setXIsNext] = useState(true);
   const [Knn, setKnn] = useState('playing');
   const [MLP, setMlp] = useState('playing');
-  const [ARV, setARV] = useState('playing');
+  //const [ARV, setARV] = useState('playing');
 
 
 
@@ -61,9 +61,6 @@ function App() {
         <div className="knn">
         {"KNN:  "+Knn}
         </div>
-        <div className="knn">
-        {"Arv:  "+ARV}
-        </div>
         
         <button className="reset-btn" onClick={resetGame}>Reiniciar Jogo</button>
         <footer>
@@ -98,14 +95,14 @@ function App() {
   
     const Knn = knn(5,gameState)
     const MLP = mlp(gameState)
-    const ARV = arv(gameState)
+    //const ARV = arv(gameState)
     setKnn(Knn);
-    setARV(ARV)
+    //setARV(ARV)
     setMlp(MLP)
 
     console.log('\n -------------------------------- \n')
     console.log("Resultado KNN: "+Knn + "Array: "+gameState);
-    console.log("Resultado Arvore: "+ARV + "Array: "+gameState);
+    //console.log("Resultado Arvore: "+ARV + "Array: "+gameState);
     console.log("Resultado MLP: "+MLP + "Array: "+gameState);
   }
 }
