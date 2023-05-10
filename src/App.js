@@ -1,3 +1,5 @@
+import { mlp } from './mlp'
+import { arv } from './arv'
 import { knn } from './knn'
 import React, { useState } from 'react';
 import './App.css';
@@ -5,7 +7,9 @@ import './App.css';
 function App() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
-  const [IA, setIA] = useState('playing');
+  const [Knn, setKnn] = useState('playing');
+  const [MLP, setMlp] = useState('playing');
+  const [ARV, setARV] = useState('playing');
 
 
 
@@ -50,10 +54,18 @@ function App() {
         {renderSquare(6)}
         {renderSquare(7)}
         {renderSquare(8)}
-      </div>
-      <div className="knn">
-        {IA}
         </div>
+        <div className="knn">
+        {"MLP:  "+MLP}
+        </div>
+        <div className="knn">
+        {"KNN:  "+Knn}
+        </div>
+        <div className="knn">
+        {"Arv:  "+ARV}
+        </div>
+        
+        <button className="reset-btn" onClick={resetGame}>Reiniciar Jogo</button>
         <footer>
           Nomes: Dylan Silveira, Leandro Silva, Leonardo Marques, Nicolas Marques
       </footer>
@@ -62,7 +74,13 @@ function App() {
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
-  
+  function resetGame() {
+    setSquares(Array(9).fill(null)); // redefine o estado dos quadrados para nulo
+    setXIsNext(true); // redefine o próximo jogador para X
+    setKnn('playing'); // redefine o estado da IA para "jogando"
+    setMlp('playing');
+  };
+
   async function readGameState() {
     await sleep(250);
     const gameState = [];
@@ -78,10 +96,17 @@ function App() {
       }
     }
   
-    const newIA = knn(5,gameState); // Calcula o novo valor de IA
-    setIA(newIA); // Atualiza o estado de IA com o novo valor
-    console.log("Resultado: "+newIA + "Array: "+gameState);
-    return newIA
+    const Knn = knn(5,gameState)
+    const MLP = mlp(gameState)
+    const ARV = arv(gameState)
+    setKnn(Knn);
+    setARV(ARV)
+    setMlp(MLP)
+
+    console.log('\n -------------------------------- \n')
+    console.log("Resultado KNN: "+Knn + "Array: "+gameState);
+    console.log("Resultado Arvore: "+ARV + "Array: "+gameState);
+    console.log("Resultado MLP: "+MLP + "Array: "+gameState);
   }
 }
 

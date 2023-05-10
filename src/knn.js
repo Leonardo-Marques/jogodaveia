@@ -33,3 +33,5 @@ function getLabel(arr) {
   if (arr[1] == 1) return 'oWins'
   return 'playing'
 }
+
+console.log('Accuracy KNN:', calcAccuracy())

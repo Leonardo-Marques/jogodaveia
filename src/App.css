@@ -29,8 +29,26 @@ body {
   font-size: 20px;
   font-weight: bold;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
-
+.square:hover {
+  background-color: #eee;
+}
+.reset-btn:hover {
+  background-color: #162eb8;
+}
+.reset-btn {
+  background-color: #3908be;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+}
 .square {
   background-color: #fff;
   border: 2px solid #999;
