@@ -1,7 +1,5 @@
 const _ = require('lodash');
 //modulo para facilitar iteracao com colecoes, usados nos arrays
-
-module.exports = (function () {
   const NODE_TYPES = DecisionTreeID3.NODE_TYPES = {
     RESULT: 'result',
     FEATURE: 'feature',
@@ -220,4 +218,3 @@ module.exports = (function () {
     return "_r" + Math.random().toString(32).slice(2);
   }
   return DecisionTreeID3;
-})();
